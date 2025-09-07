@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #fffbf7;
+  color: rgb(115, 65, 86);
+  padding: 2em;
+  text-align: center;
+}
+section {
+  padding: 1.5em;
+}
+footer {
+  text-align: center;
+  padding: 1em;
+  background-color: #eee;
+}
+img {
+  text-align: center;
+  width: 200px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+.favorites {
+  display: flex;
+  justify-content: space-around; 
+  align-items: flex-start;     
+  gap: 2em;                    
+  padding: 2em;
+}
+
+.fav-column {
+  flex: 1;                    
+  min-width: 200px;             
+}
+
+.fav-column h3 {
+  text-align: center;
+  color: rgb(115, 65, 86);
+}
+
+.interests {
+  display: flex;
+  flex-wrap: wrap;      
+  gap: 1em;             
+  list-style-type: none; 
+  padding: 0;
+  margin: 0;
+  justify-content: center; 
+}
+
+.interests li {
+  background-color: #fffbf7;
+  border: 1px solid rgb(115, 65, 86);
+  padding: 0.5em 1em;
+  border-radius: 8px;
+}
+
+.about-me {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  color: rgb(115, 65, 86);
+}
+
+ul li {     
+  color: rgb(115, 65, 86);
+}
