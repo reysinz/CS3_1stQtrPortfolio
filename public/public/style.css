@@ -1,0 +1,42 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+button {
+  padding: 20px 40px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;     
+  margin: 20px auto;  
+  background-color: rgb(255, 241, 243);
+  color: rgb(213, 124, 170);      
+  border: 2px solid rgb(213, 124, 170);
+  border-radius: 6px;  
+}
+
+img {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+.profile {
+  width: 50px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+.side-text {
+  position: absolute;
+  bottom: 10px;   /* distance from bottom */
+  right: 10px;    /* distance from right */
+  font-size: 12px;
+  color: rgb(213, 124, 170); /* pastel pink */
+  font-family: Arial, sans-serif;
+}

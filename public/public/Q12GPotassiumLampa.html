@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Second Graded Exercise</title>
+    <style>
+        body {
+            color: pink; /* baby pink text */
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2> Q1 2nd Graded Exercise submitted by Rey Lampa of 9Potassium </h2>
+
+    <label>Meal Price: <input type="text" id="mealPrice"></label><br><br>
+    <label>Tip: <input type="text" id="tip"></label><br><br>
+    <label>Service Charge (%): <input type="text" id="serviceCharge"></label><br><br>
+
+    <button onclick="totalMeal()">Accept Input</button>
+
+    <p id="output"></p>
+
+    <footer>
+        <p>References:</p>
+        <p>W3Schools.com. (n.d.). <a href="https://www.w3schools.com/tags/tag_input.asp" target="_blank">https://www.w3schools.com/tags/tag_input.asp</a></p>
+        <p>W3Schools.com. (n.d.-b). <a href="https://www.w3schools.com/tags/tag_output.asp" target="_blank">https://www.w3schools.com/tags/tag_output.asp</a></p>
+    </footer>
+
+    <script>
+        function totalMeal() {
+            let mp = parseFloat(document.getElementById("mealPrice").value);
+            let tip = parseFloat(document.getElementById("tip").value);
+            let sc = parseFloat(document.getElementById("serviceCharge").value);
+
+            let totalCost = mp + tip + (sc / 100 * mp);
+
+            document.getElementById("output").innerHTML = "Total Meal: " + totalCost.toFixed(2);
+        }
+    </script>
+</body>
+</html>
