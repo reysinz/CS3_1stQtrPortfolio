@@ -1,0 +1,49 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+h1 {
+  text-align: center;
+  color: #f5a7be;
+  font-family: 'Dancing Script', cursive;
+
+}
+
+button {
+  padding: 10px 40px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;     
+  margin: 10px auto;  
+  background-color: rgb(255, 241, 243);
+  color: rgb(213, 124, 170);      
+  border: 2px solid rgb(213, 124, 170);
+  border-radius: 6px;  
+}
+
+img {
+  width: 350px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+#message {
+  text-align: center;
+  color: #f8dae3;
+}
+
+#wordDisplay {
+  text-align: center;
+  color:  #f8dae3;
+}
+
+#wguessInput {
+  text-align: center;
+  color: #f8dae3;
+}

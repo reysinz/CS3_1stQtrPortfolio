@@ -1,0 +1,31 @@
+<h1>Guess My Word</h1>
+  <link rel="stylesheet" href="style4.css">
+   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  <img src="https://64.media.tumblr.com/78d611ada9c2b7727728a24aea4ff2d9/cba3933d5b0664b8-4d/s2048x3072/d86494749624d09218bd4c9ee404b400756f97a2.pnj" alt="Fun animation">
+<p id="wordDisplay"></p>
+<input type="text" id="guessInput" maxlength="1">
+<button onclick="makeGuess()">Guess</button>
+<p id="message"></p>
+
+<script>
+  let secretWord = ["r", "a", "m", "b", "l", "i", "n", "g",  "r", "e", "y"];
+  let guessedWord = ["♡", "♡", "♡", "♡", "♡", "♡", "♡", "♡", "♡", "♡", "♡"];
+
+  document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+
+  function makeGuess() {
+    let guess = document.getElementById("guessInput").value.toLowerCase();
+    let correct = false;
+
+    for (let i = 0; i < secretWord.length; i++) {
+      if (secretWord[i] === guess) {
+        guessedWord[i] = guess;
+        correct = true;
+      }
+    }
+
+    document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+    document.getElementById("message").textContent = correct ? "ꨄ︎ Correct!" : "❦. Try again.";
+    document.getElementById("guessInput").value = "";
+  }
+</script>
