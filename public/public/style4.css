@@ -2,48 +2,62 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   min-height: 100vh;
   background-color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.game-container {
+  text-align: center;
 }
 
 h1 {
   text-align: center;
-  color: #f5a7be;
+  color: #f6c8d6;
   font-family: 'Dancing Script', cursive;
-
+  margin-bottom: 15px;
 }
 
 button {
   padding: 10px 40px;
   font-size: 1rem;
   cursor: pointer;
-  display: block;     
-  margin: 10px auto;  
+  margin: 10px auto;
   background-color: rgb(255, 241, 243);
-  color: rgb(213, 124, 170);      
-  border: 2px solid rgb(213, 124, 170);
-  border-radius: 6px;  
+  color: rgb(251, 207, 230);
+  border: 2px solid rgb(243, 199, 222);
+  border-radius: 6px;
 }
 
 img {
-  width: 350px;
+  width: 200px;
   height: auto;
   display: block;
-  margin: 20px auto;
+  margin: 10px auto;
 }
 
 #message {
   text-align: center;
-  color: #f8dae3;
+  color: #f6d1db;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-top: 10px;
 }
 
 #wordDisplay {
   text-align: center;
-  color:  #f8dae3;
+  color: #f6d1db;
+  font-size: 2em;
+  letter-spacing: 8px;
+  margin: 15px 0;
 }
 
-#wguessInput {
+#guessInput {
   text-align: center;
-  color: #f8dae3;
+  padding: 5px;
+  font-size: 1rem;
+  margin: 5px 0;
+  border: 1px solid #f6d1db;
+  border-radius: 5px;
+  width: 40px;
 }

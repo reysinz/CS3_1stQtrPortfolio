@@ -1,31 +1,81 @@
-<h1>Guess My Word</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Guess My Word</title>
   <link rel="stylesheet" href="style4.css">
-   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
-  <img src="https://64.media.tumblr.com/78d611ada9c2b7727728a24aea4ff2d9/cba3933d5b0664b8-4d/s2048x3072/d86494749624d09218bd4c9ee404b400756f97a2.pnj" alt="Fun animation">
-<p id="wordDisplay"></p>
-<input type="text" id="guessInput" maxlength="1">
-<button onclick="makeGuess()">Guess</button>
-<p id="message"></p>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Guess My Word</h1>
+    <img src="https://64.media.tumblr.com/78d611ada9c2b7727728a24aea4ff2d9/cba3933d5b0664b8-4d/s2048x3072/d86494749624d09218bd4c9ee404b400756f97a2.pnj" alt="Fun animation">
 
-<script>
-  let secretWord = ["r", "a", "m", "b", "l", "i", "n", "g",  "r", "e", "y"];
-  let guessedWord = ["♡", "♡", "♡", "♡", "♡", "♡", "♡", "♡", "♡", "♡", "♡"];
+    <p id="wordDisplay"></p>
+    <input type="text" id="guessInput" maxlength="1">
+    
+    <img src="https://64.media.tumblr.com/78d611ada9c2b7727728a24aea4ff2d9/cba3933d5b0664b8-4d/s2048x3072/d86494749624d09218bd4c9ee404b400756f97a2.pnj" alt="Fun animation">
 
-  document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+    <button onclick="makeGuess()">Guess</button>
+    <button onclick="resetGame()">Reset</button>
+    <p id="message"></p>
+  </div>
 
-  function makeGuess() {
-    let guess = document.getElementById("guessInput").value.toLowerCase();
-    let correct = false;
+  <script>
+    let secretWord = ["r", "a", "m", "b", "l", "i", "n", "g", "r", "e", "y"];
+    let guessedWord;
+    let lives;
 
-    for (let i = 0; i < secretWord.length; i++) {
-      if (secretWord[i] === guess) {
-        guessedWord[i] = guess;
-        correct = true;
-      }
+    function initGame() {
+      guessedWord = Array(secretWord.length).fill("♡");
+      lives = 6;
+      document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+      document.getElementById("message").textContent = `You have ${lives} lives left.`;
+      document.getElementById("guessInput").disabled = false;
+      document.getElementById("guessInput").value = "";
     }
 
-    document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
-    document.getElementById("message").textContent = correct ? "ꨄ︎ Correct!" : "❦. Try again.";
-    document.getElementById("guessInput").value = "";
-  }
-</script>
+    function makeGuess() {
+      let guess = document.getElementById("guessInput").value.toLowerCase();
+      let correct = false;
+
+      for (let i = 0; i < secretWord.length; i++) {
+        if (secretWord[i] === guess) {
+          guessedWord[i] = guess;
+          correct = true;
+        }
+      }
+
+      document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+
+      if (guessedWord.join("") === secretWord.join("")) {
+        document.getElementById("message").textContent = "🎉 You guessed the word!";
+        document.getElementById("guessInput").disabled = true;
+        return;
+      }
+
+      if (!correct) {
+        lives--;
+      }
+
+      if (lives > 0) {
+        document.getElementById("message").textContent = correct
+          ? `ꨄ︎ Correct! Lives left: ${lives}`
+          : `❦. Wrong guess! Lives left: ${lives}`;
+      } else {
+        document.getElementById("message").textContent = `💀 Game Over! The word was "${secretWord.join("")}".`;
+        document.getElementById("guessInput").disabled = true;
+      }
+
+      document.getElementById("guessInput").value = "";
+    }
+
+    function resetGame() {
+      initGame();
+    }
+
+    // Start the game on load
+    window.onload = initGame;
+  </script>
+</body>
+</html>

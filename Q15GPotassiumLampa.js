@@ -1,8 +1,6 @@
 process.stdin.on('data', input => {
+  const NUM = Number(input.toString().trim());
 
-  const NUM = Number(input.toString().trim());  
-
-  // start of your code
   if (NUM % 2 !== 0) {
     console.log("Weird");
   } else if (NUM >= 2 && NUM <= 5) {
@@ -13,7 +11,5 @@ process.stdin.on('data', input => {
     console.log("Not Weird");
   }
 
-
   process.exit();
-
 });
